@@ -106,11 +106,14 @@ final class Sujet extends Entity{
     {
         return $this->dateDeCreation;
     }
+    // la fonction qui permet de convertir la date en format français.
 
     public function getDateCreationFr() {
         $date = new \DateTime($this->dateDeCreation);
         return $date->format("d-m-Y H:i");
     }
+    
+
     /**
      * Set the value of dateDeCreation
      *
@@ -141,6 +144,12 @@ final class Sujet extends Entity{
         $this->verrouillage = $verrouillage;
 
         return $this;
+    }
+    public function getConvertVerouillage(){
+        if($this->verrouillage  ==  1){
+            return $verrouillage = "(Verrouillé)";
+
+        }
     }
 
     public function __tostring() {

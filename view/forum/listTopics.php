@@ -9,5 +9,6 @@
 
 <?php
 foreach($topics as $topic ){ ?>
-    <p><a href="index.php?ctrl=forum&action=listMessagesBySujet&id=<?= $topic->getId() ?>"><?= $topic ?></a> par <?= $topic->getUtilisateur() ?> le <?=$topic->getDateCreationFr()  ?> </p>
+    <p><a href="index.php?ctrl=forum&action=listMessagesBySujet&id=<?= $topic->getId() ?>"><?= $topic ?></a> par <?= $topic->getUtilisateur() ?> le <?=$topic->getDateCreationFr()  ?>
+    <?=$topic-> getConvertVerouillage()  ?> </p>
 <?php };
