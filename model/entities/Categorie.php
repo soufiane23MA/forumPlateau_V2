@@ -7,15 +7,12 @@ use App\Entity;
     En programmation orientée objet, une classe finale (final class) est une classe que vous ne pouvez pas étendre, c'est-à-dire qu'aucune autre classe ne peut hériter de cette classe. En d'autres termes, une classe finale ne peut pas être utilisée comme classe parente.
 */
 
-final class Topic extends Entity{
+final class Categorie extends Entity{
 
     private $id;
-    private $title;
-    private $user;
-    private $category;
-    private $creationDate;
-    private $closed;
+    private $nomDeCategorie;
 
+    // chaque entité aura le même constructeur grâce à la méthode hydrate (issue de App\Entity)
     public function __construct($data){         
         $this->hydrate($data);        
     }
@@ -23,7 +20,8 @@ final class Topic extends Entity{
     /**
      * Get the value of id
      */ 
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -32,46 +30,36 @@ final class Topic extends Entity{
      *
      * @return  self
      */ 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->id = $id;
+
         return $this;
     }
 
+   
+
     /**
-     * Get the value of title
+     * Get the value of nomDeCategorie
      */ 
-    public function getTitle(){
-        return $this->title;
+    public function getNomDeCategorie()
+    {
+        return $this->nomDeCategorie;
     }
 
     /**
-     * Set the value of title
+     * Set the value of nomDeCategorie
      *
      * @return  self
      */ 
-    public function setTitle($title){
-        $this->title = $title;
+    public function setNomDeCategorie($nomDeCategorie)
+    {
+        $this->nomDeCategorie = $nomDeCategorie;
+
         return $this;
     }
 
-    /**
-     * Get the value of user
-     */ 
-    public function getUser(){
-        return $this->user;
-    }
-
-    /**
-     * Set the value of user
-     *
-     * @return  self
-     */ 
-    public function setUser($user){
-        $this->user = $user;
-        return $this;
-    }
-
-    public function __toString(){
-        return $this->title;
+    public function __tostring() {
+        return $this->nomDeCategorie;
     }
 }
