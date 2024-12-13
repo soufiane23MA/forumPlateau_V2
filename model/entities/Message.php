@@ -9,7 +9,7 @@ final class Message extends Entity{
 
 	private $id;
 	private  $contenuDeMessage;
-	private $dateDeCreation;
+	private $dateDeCreationMessage;
 	private $sujet;
 	private $utilisateur;
 	
@@ -64,19 +64,25 @@ final class Message extends Entity{
 	/**
 	 * Get the value of dateDeCreation
 	 */ 
-	public function getDateDeCreation()
+	public function getDateDeCreationMessage()
 	{
-		return $this->dateDeCreation;
+		return $this->dateDeCreationMessage;
 	}
+	// fonction qui permet l'affichage de la date et heure des massages.
+	public function getDateCreationFr() {
+		$date = new \DateTime($this->dateDeCreationMessage);
+		return $date->format("d-m-Y H:i");
+}
+ 
 
 	/**
 	 * Set the value of dateDeCreation
 	 *
 	 * @return  self
 	 */ 
-	public function setDateDeCreation($dateDeCreation)
+	public function setDateDeCreationMessage($dateDeCreationMessage)
 	{
-		$this->dateDeCreation = $dateDeCreation;
+		$this->dateDeCreationMessage = $dateDeCreationMessage;
 
 		return $this;
 	}

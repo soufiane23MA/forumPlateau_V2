@@ -9,7 +9,7 @@ $sujet =$result["data"]['sujet'];
 
 <?php
 foreach($messages as $message ){ ?>
-	<p><?= $message->getContenuDeMessage() ?></p>
+	<p><?= $message->getContenuDeMessage() ?> le <?= $message->getDateCreationFr()?> par <?= $message->getUtilisateur()?></p>
 <?php }
-
+ 
 ?>
