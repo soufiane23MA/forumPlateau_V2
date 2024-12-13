@@ -15,3 +15,9 @@ foreach($messages as $message ){ ?>
 <?php }
  
 ?>
+
+<h3>Repondre</h3>
+ <form action="index.php?ctrl=forum&action=addMessageTopic&id=<?= $sujet->getId() ?>" method="POST">
+    <textarea name="repondre" id="repondre" rows="10"></textarea><br>
+    <input type="submit" name="submit" value="repondre">
+ </form>

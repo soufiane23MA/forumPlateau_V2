@@ -25,7 +25,7 @@ class ForumController extends AbstractController implements ControllerInterface{
                 "categories" => $categories
             ]
         ];
-        
+
 
     }
 
@@ -37,7 +37,7 @@ class ForumController extends AbstractController implements ControllerInterface{
         $topics = $topicManager->findTopicsByCategory($id);
  
         return [
-            "view" => VIEW_DIR."forum/listTopics.php",
+            "view" => VIEW_DIR."forum/listSujets.php",
             "meta_description" => "Liste des topics par catégorie : ".$category,
             "data" => [
                 "category" => $category,
@@ -62,5 +62,24 @@ class ForumController extends AbstractController implements ControllerInterface{
            
             ]; 
 
+    }
+
+    public function addMessageTopic($id) {
+        $messageManager = new MessageManager();
+
+        if(isset($_POST["submit"])) {
+           $message = filter_input(INPUT_POST, "repondre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+           if($message) {
+              $add = $messageManager->add(
+                [
+                    "contenuDeMessage" => $message,
+                    "sujet_id" => $id,
+                    "utilisateur_id" => 2
+                    ]
+              );
+              header("Location: index.php?ctrl=forum&action=listMessagesBySujet&id=$id");
+           }
+        }
     }
 }

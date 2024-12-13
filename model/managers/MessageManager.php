@@ -20,11 +20,11 @@ class MessageManager extends Manager{
         WHERE m.sujet_id = :id
         ORDER BY dateDeCreationMessage ASC";
 
-// la requête renvoie plusieurs enregistrements --> getMultipleResults
-return  $this->getMultipleResults(
-    DAO::select($sql, ['id' => $id]), 
-    $this->className
-);
+        // la requête renvoie plusieurs enregistrements --> getMultipleResults
+        return  $this->getMultipleResults(
+            DAO::select($sql, ['id' => $id]), 
+            $this->className
+        );
 
     }
 

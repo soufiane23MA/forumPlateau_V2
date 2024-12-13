@@ -12,3 +12,13 @@ foreach($topics as $topic ){ ?>
     <p><a href="index.php?ctrl=forum&action=listMessagesBySujet&id=<?= $topic->getId() ?>"><?= $topic ?></a> par <?= $topic->getUtilisateur() ?> le <?=$topic->getDateCreationFr()  ?>
     <?=$topic-> getConvertVerouillage()  ?> </p>
 <?php };
+?>
+ 
+ <form action="index.php?ctrl=forum&action=listMessagesBySujet&id=<?= $topic->getId() ?>" method="POST">
+<input type="text" placeholder="Titre" name="titre"><br>
+<textarea type="textarea" placeholder="Message" name="message" rows="10"></textarea><br>
+<input type="submit" value="Envoyer">
+
+
+ </form>
+ 
