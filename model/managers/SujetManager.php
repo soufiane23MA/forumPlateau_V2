@@ -20,7 +20,8 @@ class SujetManager extends Manager{
 
         $sql = "SELECT * 
                 FROM ".$this->tableName." s 
-                WHERE s.categorie_id = :id";
+                WHERE s.categorie_id = :id
+                ORDER BY dateDeCreation DESC";// requête affiche les sujet par ordere décroissant
        
         // la requête renvoie plusieurs enregistrements --> getMultipleResults
         return  $this->getMultipleResults(

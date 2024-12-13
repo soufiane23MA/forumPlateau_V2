@@ -25,6 +25,8 @@ class ForumController extends AbstractController implements ControllerInterface{
                 "categories" => $categories
             ]
         ];
+        
+
     }
 
     public function listTopicsByCategory($id) {

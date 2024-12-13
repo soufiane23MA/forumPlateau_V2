@@ -17,7 +17,8 @@ class MessageManager extends Manager{
     public function findMessagesBySujet($id) {
         $sql = "SELECT * 
         FROM ".$this->tableName." m 
-        WHERE m.sujet_id = :id";
+        WHERE m.sujet_id = :id
+        ORDER BY dateDeCreationMessage ASC";
 
 // la requête renvoie plusieurs enregistrements --> getMultipleResults
 return  $this->getMultipleResults(
