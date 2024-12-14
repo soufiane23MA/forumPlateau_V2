@@ -5,7 +5,7 @@ use App\Manager;
 use App\DAO;
 
 //c'est la classe Topic sur le framwork.
-class SujetManager extends Manager{
+class SujetManager extends Manager{  
 
     // on indique la classe POO et la table correspondante en BDD pour le manager concerné
     protected $className = "Model\Entities\Sujet";
