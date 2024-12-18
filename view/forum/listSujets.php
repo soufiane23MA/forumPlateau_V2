@@ -18,8 +18,8 @@ foreach($topics as $topic ){ ?>
  
  <form action="index.php?ctrl=forum&action=addSujetCategory&id=<?= $category->getId() ?>" method="POST">
 <input type="text" placeholder="Titre" name="titre"><br>
-<!--
-<textarea type="textarea" placeholder="Message" name="message" rows="10"></textarea><br>-->
+
+<textarea type="textarea" placeholder="Message" name="message" rows="10"></textarea><br>
 <input type="submit" name="submit" value="Rajouter">
 
  </form>

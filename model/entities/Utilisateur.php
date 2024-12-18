@@ -14,6 +14,7 @@ final class Utilisateur extends Entity{
     private $motDePasse;
     private $dateInscreption;
     private $email;
+    private $roleUtilisateur;
 
     public function __construct($data){         
         $this->hydrate($data);        
@@ -117,7 +118,26 @@ final class Utilisateur extends Entity{
 
         return $this;
     }
+    /**
+     * Get the value of roleUtilisateur
+     */ 
+    public function getRoleUtilisateur()
+    {
+        return $this->roleUtilisateur;
+    }
 
+    /**
+     * Set the value of roleUtilisateur
+     *
+     * @return  self
+     */ 
+    public function setRoleUtilisateur($roleUtilisateur)
+    {
+        $this->roleUtilisateur = $roleUtilisateur;
+
+        return $this;
+    }
+    
     public function __tostring() {
         return $this->pseudo;
     }
